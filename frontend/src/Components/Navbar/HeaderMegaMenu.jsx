@@ -21,12 +21,14 @@ import classes from './HeaderMegaMenu.module.css';
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/profile', label: 'Profile' },
+  { to: '/UrlShortener', label: 'UrlShortener'}
+  , { to: '/MyUrls', label: 'MyUrls' }
 ];
 
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const isLoggedIn = useSelector(getIsLoggedIn);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   const navItems = navLinks.map((link) => (
     <NavLink
